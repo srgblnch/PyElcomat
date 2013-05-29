@@ -1,0 +1,11 @@
+/**
+ * Device Class Identification:
+ * 
+ * Class Name   :	PyElComat
+ * Contact      :	sblanch@cells.es
+ * Class Family :	Instrumentation
+ * Platform     :	All Platforms
+ * Bus          :	Serial Line
+ * Manufacturer :	moeller-wedel-optical
+ * Reference    :	Elcomat vario
+ */
