@@ -119,7 +119,12 @@ class PyElComat(PyTango.Device_4Impl):
         self.debug_stream("In %s::addStatusMsg()"%self.get_name())
         msg = "The device is in %s state.\n"%(self.get_state())
         if not self._serialDevice == None:
-            msg = "%sThe PySerial is in %s state.\n"%(msg,self._serialDevice.State())
+            try:
+                msg = "%sThe PySerial is in %s state.\n"%(msg,self._serialDevice.State())
+            except Exception,e:
+                msg = "%sThe PySerial is not available...\n"%(msg)
+                self.error_stream("Error getting information from PySerial "\
+                                  "state: %s"%(e))
         for ilog in self._important_logs:
             msg = "%s%s\n"%(msg,ilog)
         status = "%s%s\n"%(msg,current)
